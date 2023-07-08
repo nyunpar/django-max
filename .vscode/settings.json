@@ -1,0 +1,14 @@
+{
+    "python.lanuageServer": "Pylance",
+    "files.associations": {
+        "**/*.html":"html",
+        "**/templates/**/*.html":"django-html",
+        "**/templates/**/*":"django-text",
+        "**/requirements{/**,*}.{text,in}":"pip-requirements"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+    
+}

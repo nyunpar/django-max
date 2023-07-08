@@ -1,0 +1,19 @@
+{% extends 'book_outlet/base.html' %}
+{% load static %}
+
+ {% block title %}
+ All Books
+ {% endblock title %}
+
+ {% block content %}
+ <ul>
+    {% for book  in books %}
+    <li><a href="{{book.get_absolute_url}}">{{book.title}}</a> (Rating: {{book.rating}})</li>
+    {% endfor %}
+ </ul>
+ <hr>
+ <p>Total semua buku: {{num_books}}</p>
+ <p>Rata-Rata Rating: {{average_rating.rating__avg}}</p>
+
+ {% endblock content %}
+

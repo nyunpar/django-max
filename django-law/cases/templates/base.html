@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm Management System</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a href="{% url 'cases:home' %}" class="navbar-brand">Law Firm Management</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="{% url 'cases:client_list' %}" class="nav-link">Clients</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'cases:lawyer_list' %}" class="nav-link">Lawyers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'cases:case_list' %}" class="nav-link">Cases</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role='main' class="container mt4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="bg-primary text-white mt-4 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; {% now 'Y' %} Law Firm Management. All Right Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
